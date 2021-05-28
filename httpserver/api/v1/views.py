@@ -55,7 +55,6 @@
 #         return http_ok("Keyword successfully added")
 
 
-# myTODO: add view for tagging words in sentence
 from httpserver.responses.responses import http_ok
 
 

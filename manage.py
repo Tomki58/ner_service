@@ -2,6 +2,7 @@ import asyncio
 
 import click
 from aiohttp import web
+
 from httpserver import app
 
 
@@ -18,7 +19,6 @@ def runserver():
     config = read_config()
     host, port = config.listen.split(":")
     port = int(port)
-    # Создание backup'a
     loop = asyncio.get_event_loop()
     application = loop.run_until_complete(app.create_app())
 

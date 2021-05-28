@@ -1,5 +1,5 @@
-import sys
 import logging
+import sys
 
 import structlog
 
@@ -8,9 +8,6 @@ __all__ = ("init_logger",)
 LEVELS = {"info": logging.INFO, "debug": logging.DEBUG}
 
 
-# TODO: move to init:
-# from pyservicetools import logger
-# logger.init()
 def init_logger(level: str, format: str) -> logging.Logger:
     """Returns struct logger."""
     level = LEVELS.get(level, logging.INFO)

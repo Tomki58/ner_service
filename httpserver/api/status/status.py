@@ -2,6 +2,7 @@ import json
 
 import structlog
 from aiohttp import web
+
 from httpserver.responses.responses import http_ok
 
 
@@ -9,15 +10,7 @@ async def ping(request):
     return http_ok({})
 
 
-# myTODO: rewrite for simple usage without extractor
 async def alive(request):
-    # if EXTRACTOR.is_running:
-    #     return http_ok({})
-    # else:
-    #     err = server_errors.BackendServerError(
-    #         instance="GET /alive", detail="Extractor is not running"
-    #     )
-    #     return http_error(status=err.status, errors=serialize_error(err))
     return http_ok({})
 
 
