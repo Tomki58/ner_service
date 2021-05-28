@@ -1,0 +1,12 @@
+syntax: glob
+.idea
+*.pyc
+*.orig
+*.bin
+.vscode
+.xml
+.html
+__pycache__*
+tomita/dev/
+get-pip.py*
+./data/results_json/
