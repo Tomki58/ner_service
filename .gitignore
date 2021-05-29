@@ -10,3 +10,4 @@ __pycache__*
 tomita/dev/
 get-pip.py*
 ./data/results_json/
+data
