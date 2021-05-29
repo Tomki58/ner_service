@@ -18,10 +18,10 @@
 #         result = transformers.tomita_xml_to_facts(indent_to_xml)
 #         return http_ok(result)
 
+from helpers.serializers import serialize_error
 from httpserver.errors import client_errors, server_errors, transport_errors
 from httpserver.responses.responses import http_error, http_ok
 from httpserver.workers.tagging import tagging
-from helpers.serializers import serialize_error
 
 
 async def tag_sentence(request):
