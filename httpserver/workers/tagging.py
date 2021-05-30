@@ -29,5 +29,4 @@ async def tagging(payload):
     for _, sntns in indent_to_sentences.items():
         sentences.extend(sntns)
 
-    # print(sentences)
     return sentences

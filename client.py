@@ -3,7 +3,6 @@
 
 import json
 import sys
-import time
 
 import requests
 
@@ -19,13 +18,10 @@ if __name__ == "__main__":
         wm = json.load(source)
         map_ = read_verc(wm)
 
-    # start = time.clock()
     payload = json.dumps({"data": map_})
-    # response = requests.post("http://localhost:10000/api/v1/extract", data=payload)
     response = requests.post("http://localhost:10000/api/v1/tag_sentence", data=payload)
     try:
         result = response.json()
         print(json.dumps(result, indent=2))
-        # print(time.clock() - start)
     except:
         print(response.text)
