@@ -1,0 +1,7 @@
+typing_extensions==3.10.0.0
+requests==2.25.1
+aiohttp==3.7.4.post0
+structlog==21.1.0
+pydantic==1.8.2
+click==8.0.1
+python-dotenv==0.17.1
