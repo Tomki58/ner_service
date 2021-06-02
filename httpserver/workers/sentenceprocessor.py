@@ -1,5 +1,5 @@
-import pymorphy2
 import nltk
+import pymorphy2
 import sklearn_crfsuite
 
 
