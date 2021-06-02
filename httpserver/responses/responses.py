@@ -4,7 +4,7 @@
 
 from aiohttp import web
 
-from helpers.json_encoder import json_dumps
+from common.json_encoder import json_dumps
 
 __all__ = ("http_ok", "http_error")
 

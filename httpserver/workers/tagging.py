@@ -1,3 +1,10 @@
+from httpserver.workers.sentenceprocessor import process_sentence
+import pickle
+from pymorphy2 import analyzer
+import pymorphy2
+
+import sklearn_crfsuite
+
 from httpserver.errors import client_errors, server_errors, transport_errors
 from httpserver.workers.sentencedetector import detect
 
@@ -29,4 +36,14 @@ async def tagging(payload):
     for _, sntns in indent_to_sentences.items():
         sentences.extend(sntns)
 
-    return sentences
+    crf_model: sklearn_crfsuite.CRF
+    with open("./models/model", "rb") as source:
+        crf_model = pickle.load(source)
+
+    analyzer = pymorphy2.MorphAnalyzer(lang="ru")
+    result = list()
+
+    for sent in sentences:
+        result.append(process_sentence(sent, analyzer, crf_model))
+
+    return result

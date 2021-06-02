@@ -1,7 +1,7 @@
 from aiohttp import web
 
 from config import read_config
-from helpers.logging import init_logger
+from common.logging import init_logger
 from httpserver.api.status.status import create_subapp as create_status_subapp
 from httpserver.api.v1.routes import routes
 

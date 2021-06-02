@@ -6,7 +6,7 @@ import sys
 
 import requests
 
-from helpers.vercreader import read_verc
+from common.vercreader import read_verc
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

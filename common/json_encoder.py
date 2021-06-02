@@ -9,7 +9,7 @@ __all__ = ("json_dumps", "json_dump_traceback")
 
 def json_dumps(data) -> str:
     """Dumps data to json with custom JSONEncoder."""
-    return json.dumps(data, ensure_ascii=False, cls=JSONEncoder)
+    return json.dumps(data, ensure_ascii=False)
 
 
 def json_dump_traceback(tb: TracebackType) -> str:
