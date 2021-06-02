@@ -18,7 +18,7 @@ if __name__ == "__main__":
         wm = json.load(source)
         map_ = read_verc(wm)
 
-    payload = json.dumps({"data": map_})
+    payload = json.dumps({"source": "/home/argabidullin/ner_service/data/test_text.txt"})
     response = requests.post("http://localhost:10000/api/v1/tag_sentence", data=payload)
     try:
         result = response.json()

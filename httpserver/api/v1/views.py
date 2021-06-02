@@ -1,5 +1,6 @@
 import io
 import json
+
 from common.serializers import serialize_error
 from httpserver.errors import client_errors, server_errors, transport_errors
 from httpserver.responses.responses import http_error, http_ok
@@ -22,5 +23,5 @@ async def tag_sentence(request):
     else:
         with io.open("./data/result.txt", "w", encoding="utf8") as target:
             json.dump(result, target, indent=2, ensure_ascii=False)
-            
+
         return http_ok(result)

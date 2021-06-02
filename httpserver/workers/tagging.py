@@ -1,19 +1,21 @@
-from httpserver.workers.sentenceprocessor import process_sentence
 import pickle
-from pymorphy2 import analyzer
-import pymorphy2
 
+import pymorphy2
 import sklearn_crfsuite
 
+from common.texthandlers import text_to_format
 from httpserver.errors import client_errors, server_errors, transport_errors
 from httpserver.workers.sentencedetector import detect
+from httpserver.workers.sentenceprocessor import process_sentence
 
 
 async def tagging(payload):
     """ Tag words in sentence """
 
     try:
-        map_: dict = payload["data"]
+        # map_: dict = payload["data"]
+        file_path: str = payload["source"]
+        map_ = text_to_format(file_path)
     except:
         raise client_errors.ClientBadRequestError(
             detail="not found `data`", instance="POST /tag_sentence"
