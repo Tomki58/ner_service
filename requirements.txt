@@ -1,7 +1,10 @@
-typing_extensions==3.7.4.3
-requests==2.25.1
 aiohttp==3.7.4.post0
+pymorphy2==0.9.1
+sklearn_crfsuite==0.3.6
+typing_extensions==3.7.4.3
+nltk==3.6.2
+requests==2.25.1
 structlog==21.1.0
-pydantic==1.8.2
 click==8.0.1
+pydantic==1.8.2
 python-dotenv==0.17.1
